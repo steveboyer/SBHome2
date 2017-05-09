@@ -25,7 +25,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -73,6 +75,14 @@ public class Main {
       return "error";
     }
   }
+
+    @RequestMapping(value = "/robots.txt", method = RequestMethod.GET)
+    public String robots(HttpServletRequest request) {
+      return "robots";
+//        return (Arrays.asList("stephenboyer.com", "www.stephenboyer.com").contains(request.getServerName())) ?
+//                "robotsAllowed" : "robotsDisallowed";
+    }
+
 
   @Bean
   public DataSource dataSource() throws SQLException {
