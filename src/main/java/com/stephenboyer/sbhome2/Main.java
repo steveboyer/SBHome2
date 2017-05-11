@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example;
+package com.stephenboyer.sbhome2;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -47,6 +47,7 @@ public class Main {
   private DataSource dataSource;
 
   public static void main(String[] args) throws Exception {
+
     SpringApplication.run(Main.class, args);
   }
 
@@ -63,7 +64,7 @@ public class Main {
       stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
       ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
 
-      ArrayList<String> output = new ArrayList<String>();
+      ArrayList<String> output = new ArrayList<>();
       while (rs.next()) {
         output.add("Read from DB: " + rs.getTimestamp("tick"));
       }
@@ -76,12 +77,6 @@ public class Main {
     }
   }
 
-  @RequestMapping(value = "/robots.txt", method = RequestMethod.GET)
-  public String robots(HttpServletRequest request) {
-    return "robots";
-  }
-
-
   @Bean
   public DataSource dataSource() throws SQLException {
     if (dbUrl == null || dbUrl.isEmpty()) {
@@ -91,6 +86,11 @@ public class Main {
       config.setJdbcUrl(dbUrl);
       return new HikariDataSource(config);
     }
+  }
+
+  @RequestMapping(value = "/robots.txt", method = RequestMethod.GET)
+  public String robots(HttpServletRequest request) {
+    return "robots";
   }
 
 }
