@@ -76,12 +76,10 @@ public class Main {
     }
   }
 
-    @RequestMapping(value = "/robots.txt", method = RequestMethod.GET)
-    public String robots(HttpServletRequest request) {
-      return "robots";
-//        return (Arrays.asList("stephenboyer.com", "www.stephenboyer.com").contains(request.getServerName())) ?
-//                "robotsAllowed" : "robotsDisallowed";
-    }
+  @RequestMapping(value = "/robots.txt", method = RequestMethod.GET)
+  public String robots(HttpServletRequest request) {
+    return "robots";
+  }
 
 
   @Bean
