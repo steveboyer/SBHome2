@@ -1,1 +1,0 @@
-web: java -jar target/sbhome2-1.0.jar
