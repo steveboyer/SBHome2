@@ -16,6 +16,8 @@
 
 package com.stephenboyer.sbhome2;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -25,11 +27,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import org.apache.commons.dbcp.BasicDataSource;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -104,25 +103,25 @@ public class Main {
 
   @Bean
   public DataSource dataSource() throws SQLException, URISyntaxException {
-//    if (dbUrl == null || dbUrl.isEmpty()) {
-//      return new HikariDataSource();
-//    } else {
-//      HikariConfig config = new HikariConfig();
-//      config.setJdbcUrl(dbUrl);
-//      return new HikariDataSource(config);
-//    }
-      URI dbUri = new URI(System.getenv("JDBC_DATABASE_URL"));
-
-      String username = dbUri.getUserInfo().split(":")[0];
-      String password = dbUri.getUserInfo().split(":")[1];
-      String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
-
-      BasicDataSource basicDataSource = new BasicDataSource();
-      basicDataSource.setUrl(dbUrl);
-      basicDataSource.setUsername(username);
-      basicDataSource.setPassword(password);
-
-      return basicDataSource;
+    if (dbUrl == null || dbUrl.isEmpty()) {
+      return new HikariDataSource();
+    } else {
+      HikariConfig config = new HikariConfig();
+      config.setJdbcUrl(dbUrl);
+      return new HikariDataSource(config);
+    }
+//      URI dbUri = new URI(System.getenv("JDBC_DATABASE_URL"));
+//
+//      String username = dbUri.getUserInfo().split(":")[0];
+//      String password = dbUri.getUserInfo().split(":")[1];
+//      String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
+//
+//      BasicDataSource basicDataSource = new BasicDataSource();
+//      basicDataSource.setUrl(dbUrl);
+//      basicDataSource.setUsername(username);
+//      basicDataSource.setPassword(password);
+//
+//      return basicDataSource;
   }
 
   @RequestMapping(value = "/robots.txt", method = RequestMethod.GET)
