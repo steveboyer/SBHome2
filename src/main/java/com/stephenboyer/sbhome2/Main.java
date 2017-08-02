@@ -88,7 +88,7 @@ public class Main {
 //            // not on classpath
 //        }
 
-      ArrayList<String> output = new ArrayList<String>();
+      ArrayList<String> output = new ArrayList<>();
       while (rs.next()) {
         output.add("Read from DB: " + rs.getTimestamp("tick"));
       }
