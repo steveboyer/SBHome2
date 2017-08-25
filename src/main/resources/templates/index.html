@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
 
-<head>
+<head xmlns:th="http://www.springframework.org/schema/mvc">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>S. Boyer</title>
-    <link rel="icon" href="/images/sbico-web.png" type="image/png" sizes="160x160">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <script src="https://use.fontawesome.com/a802698f26.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
-    <script src="/js/home.js"></script>
+    <link rel="shortcut icon" href="images/sbico-web.png" type="image/x-icon">
+    <link rel="icon" href="images/sbico-web.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link href="stylesheets/styles.css" rel="stylesheet">
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script src="js/home.js"></script>
+
 </head>
 
-<body>
+<body class="no-js">
 <div id="mobile-menu-open" class="shadow-large">
     <i class="fa fa-bars" aria-hidden="true"></i>
 </div>
 <!-- End #mobile-menu-toggle -->
+
 <header>
     <div id="mobile-menu-close">
         <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
@@ -34,7 +38,7 @@
         <li>
             <a href="#education">Education</a>
         </li>
-        <li hidden>
+        <li>
             <a href="#projects">Projects</a>
         </li>
         <li>
@@ -51,14 +55,14 @@
     <div id="lead-content">
         <h1>Stephen Boyer</h1>
         <h2>Software Engineer</h2>
-        <a href="/resumes/Stephen_Boyer_Resume_3.pdf" class="btn-rounded-white">Download Resume [PDF]</a>
+        <a href="/resumes/Stephen_Boyer_Resume_3.pdf" class="btn-rounded-warm">Download Resume [PDF]</a>
     </div>
     <!-- End #lead-content -->
 
     <div id="lead-overlay"></div>
 
     <div id="lead-down">
-            <span>
+      <span id="lead-down-span">
                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </span>
     </div>
@@ -74,7 +78,8 @@
             </div>
             <div class="col-md-8">
                 <p>
-                    I am an ambitious and results-driven Java Software Engineer with experience from the IT and services sectors. I pay meticulous attention to detail, and use excellent knowledge of Java, MySQL, JavaScript, and HTML to deliver projects on time. I am good at applying an analytical approach to solving problems, communicating effectively at all levels, and collaborating effectively in team settings.
+                    I am an ambitious and results-driven Java Software Engineer with experience from the IT and services sectors. I pay meticulous attention to detail, and use excellent knowledge of Java, MySQL, JavaScript, and HTML to deliver projects on time. I am good
+                    at applying an analytical approach to solving problems, communicating effectively at all levels, and collaborating effectively in team settings.
                 </p>
             </div>
         </div>
@@ -116,7 +121,6 @@
                 <li>
                     Created and configured a web store using tools like Stitch and Big Commerce.
                 </li>
-
             </ul>
         </div>
     </div>
@@ -138,7 +142,7 @@
 </div>
 <!-- End #education -->
 
-<div id="projects" hidden class="background-alt">
+<div id="projects" class="background-alt">
     <h2 class="heading">Projects</h2>
     <div class="container">
         <div class="row">
@@ -148,10 +152,13 @@
                 </div>
                 <!-- End .project-image -->
                 <div class="project-info">
-                    <h3>Project Name Here</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                    </p>
+                    <h3>Infrared (IR) remote control system</h3>
+                    <ul>
+                        <li>Designed a system for emulating a TV remote control with an Adnroid-based application with two external devices.</li>
+                        <li>Android app communicates with low-power Linux (Debian) server over WiFi via RESTful API.</li>
+                        <li>Linux server communicates with battery-powered Arduino device containing IR receiver and emitter via 333MHz radio frequency transmitter on server and receiver on Arduino</li>
+                        <li>Virtual buttons in Android app are used en lieu of physical remote.</li>
+                    </ul>
                     <a href="#">View Project</a>
                 </div>
                 <!-- End .project-info -->
@@ -178,7 +185,7 @@
 </div>
 <!-- End #projects -->
 
-<div id="skills" class="background-alt">
+<div id="skills" class="background">
     <h2 class="heading">Technical Skills</h2>
     <ul>
         <li>Java</li>
@@ -213,7 +220,7 @@
             <input type="hidden" name="_subject" value="Contact request from personal website" />
             <input type="email" name="_replyto" placeholder="Your email" required>
             <textarea name="message" placeholder="Your message" required></textarea>
-            <button type="submit">Send</button>
+            <button>Send</button>
         </form>
     </div>
     <!-- End #contact-form -->
@@ -229,77 +236,12 @@
                 </p>
             </div>
             <div class="col-sm-2 top">
-                    <span id="to-top">
+          <span id="to-top">
                         <i class="fa fa-chevron-up" aria-hidden="true"></i>
                     </span>
             </div>
         </div>
     </div>
 </footer>
-<!-- End footer -->
-
-
 </body>
 
-</html>
-
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'index')}">-->
-
-<!--<body>-->
-
-<!--<div class="jumbotron text-center">-->
-<!--<div class="container">-->
-<!--<a href="/" class="lang-logo">-->
-<!--<img src="/lang-logo.png">-->
-<!--</a>-->
-<!--<h1>Getting Started with Java on Heroku</h1>-->
-<!--<p>This is a sample Java application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>-->
-<!--<a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-java"><span class="glyphicon glyphicon-flash"></span> Getting Started with Java</a>-->
-<!--<a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/java-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="container">-->
-<!--<div class="alert alert-info text-center" role="alert">-->
-<!--To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-java" class="alert-link">Getting Started with Java on Heroku</a> tutorial.-->
-<!--</div>-->
-<!--<hr>-->
-<!--<div class="row">-->
-<!--<div class="col-md-6">-->
-<!--<h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>-->
-<!--<ul>-->
-<!--<li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/java-getting-started">Heroku Button</a> on the repository.</li>-->
-
-<!--<li>When Heroku received the source code, it fetched all the dependencies in the <a href="https://github.com/heroku/java-getting-started/blob/master/pom.xml">pom.xml</a>, creating a slug.</li>-->
-<!--<li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>-->
-<!--<li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--<div class="col-md-6">-->
-<!--<h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>-->
-<!--<ul>-->
-<!--<li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-java">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>-->
-<!--<li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>-->
-<!--<ul>-->
-<!--<li><code>git clone https://github.com/heroku/java-getting-started.git</code> - this will create a local copy of the source code for the app</li>-->
-<!--<li><code>cd java-getting-started</code> - change directory into the local source code repository</li>-->
-<!--<li><code>heroku git:remote -a &lt;your-app-name></code> - associate the Heroku app with the repository</li>-->
-<!--<li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-java#push-local-changes">deploy changes</a> to Heroku</li>-->
-<!--</ul>-->
-<!--</ul>-->
-<!--<h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>-->
-<!--<ul>-->
-<!--<li><a href="https://www.heroku.com/home">Heroku</a></li>-->
-<!--<li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>-->
-<!--<li><a href="https://devcenter.heroku.com/articles/getting-started-with-java">Getting Started with Java on Heroku</a></li>-->
-<!--<li><a href="https://devcenter.heroku.com/articles/deploying-java">Deploying Java Apps on Heroku</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div> &lt;!&ndash; row &ndash;&gt;-->
-<!--<div class="alert alert-info text-center" role="alert">-->
-<!--Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.-->
-<!--</div>-->
-<!--</div>-->
-
-<!--</body>-->
-<!--</html>-->

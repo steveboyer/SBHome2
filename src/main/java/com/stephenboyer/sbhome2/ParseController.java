@@ -23,7 +23,7 @@ public class ParseController {
             e.printStackTrace();
         }
         Elements newsHeadlines = doc.select("#mp-itn b a");
-        return newsHeadlines.text();
+        return "Hello";
 
     }
 

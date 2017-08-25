@@ -1,9 +1,6 @@
-$(document).ready(function() {
-
+$(function(){
     // Remove no-js class
-    $('html').removeClass('no-js');
-
-    $("#projects").hide();
+    $('body').removeClass('no-js');
 
     // Animate to section when nav is clicked
     $('header a').click(function(e) {
@@ -17,7 +14,7 @@ $(document).ready(function() {
 
         $('html, body').animate({
             scrollTop: scrollDistance + 'px'
-        }, Math.abs(window.pageYOffset - $(heading).offset().top) / 1);
+        }, Math.abs(window.pageYOffset - $(heading).offset().top));
 
         // Hide the menu once clicked if mobile
         if ($('header').hasClass('active')) {
@@ -29,15 +26,15 @@ $(document).ready(function() {
     $('#to-top').click(function() {
         $('html, body').animate({
             scrollTop: 0
-        }, 100);
+        }, 500);
     });
 
     // Scroll to first element
-    $('#lead-down span').click(function() {
+    $('#lead-down-span').click(function() {
         var scrollDistance = $('#lead').next().offset().top;
         $('html, body').animate({
             scrollTop: scrollDistance + 'px'
-        }, 100);
+        }, 500);
     });
 
     // Create timeline
@@ -76,4 +73,11 @@ $(document).ready(function() {
         $('header, body').removeClass('active');
     });
 
-})(jQuery);
+    // Load additional projects
+    $('#view-more-projects').click(function(e){
+        e.preventDefault();
+        $(this).fadeOut(300, function() {
+            $('#more-projects').fadeIn(300);
+        });
+    });
+});
