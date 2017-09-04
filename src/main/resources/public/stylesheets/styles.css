@@ -292,7 +292,7 @@ footer {
   margin: 0;
 }
 #lead-content h1 {
-  color: #1e392a;
+  color: #3cc47c;
   font-weight: 900;
   font-size: 5em;
   text-transform: uppercase;
@@ -326,7 +326,7 @@ footer {
   text-align: center;
   z-index: 10;
   bottom: 15px;
-  color: #1e392a;
+  color: #3cc47c;
 }
 #lead-down span {
   cursor: pointer;
@@ -388,6 +388,12 @@ footer {
 }
 #experience h2 {
   color: white;
+}
+#experience h3 {
+  color: #1e392a;
+}
+#experience p {
+  color: #1e392a;
 }
 
 #experience-timeline {
@@ -532,7 +538,7 @@ footer {
     -------------------------------
 */
 #projects {
-  padding: 50px 15px;
+  padding: 50px 15px 20px 15px;
   border-bottom: 1px solid #dcd9d9;
   text-align: center;
 }
@@ -566,11 +572,16 @@ footer {
   font-weight: 300;
   color: #1e392a;
   margin: 0 0 15px 0;
+  text-align: center;
 }
 .project-info p {
   color: #1e392a;
   margin: 0 0 15px 0;
   font-size: 0.9em;
+  text-align: left;
+}
+.project-info a {
+  text-align: center;
 }
 
 #more-projects {
@@ -614,7 +625,7 @@ footer {
 */
 #contact {
   padding: 50px 15px;
-  background: #1e392a;
+  background: #305a43;
   text-align: center;
 }
 #contact h2 {

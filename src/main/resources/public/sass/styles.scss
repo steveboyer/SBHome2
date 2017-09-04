@@ -46,7 +46,7 @@ $project-background: #FFFFFF;
 $border: #DCD9D9;
 
 // Define text colors
-$header-text-color: #1E392A;
+$header-text-color: #3CC47C;
 $heading: #FFFFFF;
 $text: #ffffff;
 $text-alt: #1E392A;
@@ -479,6 +479,14 @@ footer {
     h2 {
         color: $heading;
     }
+
+    h3 {
+        color: $text-alt;
+    }
+
+    p {
+        color: $text-alt;
+    }
 }
 
 #experience-timeline {
@@ -637,7 +645,7 @@ footer {
 */
 
 #projects {
-    padding: 50px 15px;
+    padding: 50px 15px 20px 15px;
     border-bottom: 1px solid $border;
     text-align: center;
 
@@ -672,12 +680,18 @@ footer {
         font-weight: 300;
         color: $text-alt;
         margin: 0 0 15px 0;
+        text-align: center;
     }
 
     p {
         color: $text-alt;
         margin: 0 0 15px 0;
         font-size: 0.9em;
+        text-align: left;
+    }
+
+    a {
+        text-align: center;
     }
 }
 
@@ -727,7 +741,7 @@ footer {
 
 #contact {
     padding: 50px 15px;
-    background: $base-color;
+    background: $background-alt;
     text-align: center;
 
     h2 {

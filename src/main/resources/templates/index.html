@@ -5,16 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>S. Boyer</title>
-    <link rel="shortcut icon" href="images/sbico-web.png" type="image/x-icon">
-    <link rel="icon" href="images/sbico-web.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
-    <link href="stylesheets/styles.css" rel="stylesheet">
+    <!--<link rel="shortcut icon" href="images/sbico-web.png" type="image/x-icon">-->
+    <!--<link rel="icon" href="images/sbico-web.png" type="image/x-icon">-->
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">-->
+    <!--<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">-->
+    <!--<link rel="stylesheet" href="stylesheets/bootstrap.min.css">-->
+    <!--<link href="stylesheets/styles.css" rel="stylesheet">-->
+    <link rel="shortcut icon" th:href="@{/images/sbico-web.png}" type="image/x-icon">
+    <link rel="shortcut icon" th:href="@{/images/sbico-web.png}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/font-awesome/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/stylesheets/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/stylesheets/styles.css}">
     <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
     <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-    <script src="js/home.js"></script>
+    <script th:src="@{/js/home.js}"></script>
 
 </head>
 
@@ -54,8 +59,8 @@
 <div id="lead">
     <div id="lead-content">
         <h1>Stephen Boyer</h1>
-        <h2>Software Engineer</h2>
-        <a href="/resumes/Stephen_Boyer_Resume_3.pdf" class="btn-rounded-warm">Download Resume [PDF]</a>
+        <h2>Full Stack Developer</h2>
+        <a th:href="@{/resumes/resume.pdf}" class="btn-rounded-warm">Download Resume [PDF]</a>
     </div>
     <!-- End #lead-content -->
 
@@ -148,24 +153,21 @@
         <div class="row">
             <div class="project shadow-large">
                 <div class="project-image">
-                    <img src="images/project.jpg" />
+                    <img src="images/CKT-child.gif" />
                 </div>
                 <!-- End .project-image -->
                 <div class="project-info">
                     <h3>Infrared (IR) remote control system</h3>
-                    <ul>
-                        <li>Designed a system for emulating a TV remote control with an Adnroid-based application with two external devices.</li>
-                        <li>Android app communicates with low-power Linux (Debian) server over WiFi via RESTful API.</li>
-                        <li>Linux server communicates with battery-powered Arduino device containing IR receiver and emitter via 333MHz radio frequency transmitter on server and receiver on Arduino</li>
-                        <li>Virtual buttons in Android app are used en lieu of physical remote.</li>
-                    </ul>
-                    <a href="#">View Project</a>
+                    <p>
+                        Designed a system for emulating a TV remote control with an Android-based application with two external devices. Android app communicates with low-power Linux (Debian) server over WiFi via RESTful API. Linux server communicates with battery-powered Arduino device containing IR receiver and emitter via 333MHz radio frequency transmitter on server and receiver on Arduino.Virtual buttons in Android app are used en lieu of physical remote.
+                    </p>
+                    <a href="https://github.com/steveboyer/Senior-Design-Report">View Project</a>
                 </div>
                 <!-- End .project-info -->
             </div>
             <!-- End .project -->
 
-            <div class="project shadow-large">
+            <div class="project shadow-large" hidden>
                 <div class="project-image">
                     <img src="images/project.jpg" />
                 </div>
