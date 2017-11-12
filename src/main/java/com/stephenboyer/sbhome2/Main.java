@@ -73,6 +73,9 @@ public class Main {
     return "index";
   }
 
+  @RequestMapping("/soap")
+  String soap() { return "soap"; }
+
   @RequestMapping("/db")
   String db(Map<String, Object> model) {
     try (Connection connection = dataSource.getConnection()) {

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<head xmlns:th="http://www.springframework.org/schema/mvc">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laramie Soap Co.</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/stylesheets/styles.css}">
+    <script th:src="@{/js/home.js}"></script>
+</head>
+
+<body class="no-js">
+<div id="mobile-menu-open" class="shadow-large">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+</div>
+
+<header>
+    <div id="mobile-menu-lead">
+        <h1>  Laramie Soap Co.</h1>
+    </div>
+    <div id="mobile-menu-close">
+        <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <ul id="menu" class="shadow">
+        <li>
+            <a href="#about">Bar Soap</a>
+        </li>
+        <li>
+            <a href="#experience">Bath Bombs</a>
+        </li>
+        <li>
+            <a href="#education">Beard and Mustache</a>
+        </li>
+        <li>
+            <a href="#projects">Body Lotion</a>
+        </li>
+        <li>
+            <a href="#skills">Hand Lotion</a>
+        </li>
+        <li>
+            <a href="#contact">Lip Balm</a>
+        </li>
+        <li>
+            <a href="#contact">Sugar Scrubs</a>
+        </li>
+    </ul>
+</header>
+
+
+<div id="lead">
+    <div id="lead-content">
+        <h1>Laramie Soap Co.</h1>
+    </div>
+    <div id="lead-overlay"></div>
+    <div id="lead-down">
+      <span id="lead-down-span">
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+    </div>
+</div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="https://c4.staticflickr.com/5/4151/5094565530_bfe006b150_o.jpg" alt="Los Angeles">
+        </div>
+
+        <div class="item">
+            <img src="https://farm4.staticflickr.com/4110/5094566080_d19a34300c_o.jpg" alt="Chicago">
+        </div>
+
+        <div class="item">
+            <img src="https://c4.staticflickr.com/5/4151/5094565530_bfe006b150_o.jpg" alt="New York">
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="container-fluid">
+    <h1>Hello World!</h1>
+    <div class="row">
+        <div class="col-sm-6" style="background-color:yellow;">
+            <p>Lorem ipsum...</p>
+        </div>
+        <div class="col-sm-6" style="background-color:pink;">
+            <p>Sed ut perspiciatis...</p>
+        </div>
+    </div>
+</div>
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="heading">About Me</h2>
+            </div>
+            <div class="col-md-8">
+                <p>
+                    I am an ambitious and results-driven Java Software Engineer with experience from the IT and services sectors. I pay meticulous attention to detail, and use excellent knowledge of Java, MySQL, JavaScript, and HTML to deliver projects on time. I am good
+                    at applying an analytical approach to solving problems, communicating effectively at all levels, and collaborating effectively in team settings.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="contact">
+    <h2>Get in Touch</h2>
+    <h2>
+        <a href="https://www.linkedin.com/in/steve-boyer/" target="_blank"><i class="fa fa-2x fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/steveboyer" target="_blank"><i class="fa fa-2x fa-github" aria-hidden="true"></i></a>
+    </h2>
+    <div id="contact-form">
+        <form method="POST" action="https://formspree.io/sboyer307@gmail.com">
+            <input type="hidden" name="_subject" value="Contact request from personal website" />
+            <input type="email" name="_replyto" placeholder="Your email" required>
+            <textarea name="message" placeholder="Your message" required></textarea>
+            <button>Send</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 copyright">
+                <p>
+                    Copyright &copy; 2017 Stephen Boyer
+                </p>
+            </div>
+            <div class="col-sm-2 top">
+          <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+
