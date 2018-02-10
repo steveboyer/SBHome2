@@ -26,6 +26,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
@@ -57,6 +58,7 @@ import java.util.Map;
 @Controller
 @SpringBootApplication
 public class Main {
+  static Logger log = Logger.getLogger(Main.class.getName());
 
   @Value("${spring.datasource.url}")
   private String dbUrl;
@@ -73,11 +75,11 @@ public class Main {
     return "index";
   }
 
-  @RequestMapping("/soap")
-  String soap() { return "soap"; }
 
   @RequestMapping("/db")
   String db(Map<String, Object> model) {
+
+
     try (Connection connection = dataSource.getConnection()) {
       Statement stmt = connection.createStatement();
       stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");

@@ -31,7 +31,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
             <version>${spring.boot.version}</version>
+
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -64,6 +71,10 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
             <!--<version>${spring.version}</version>-->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.jsoup</groupId>
@@ -129,8 +140,18 @@
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.squareup</groupId>
+            <artifactId>connect</artifactId>
+            <version>2.5.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
